@@ -14,6 +14,8 @@ public class CompareArray {
 
 	public Set<Integer> compareTwoArray(int[] number1, int[] number2) {
 		Set<Integer> listSameNumber = new HashSet<Integer>();
+		
+		//If array has same length
 		if (number1.length == number2.length) {
 			for (int i = 0; i < number1.length; i++) {
 				for (int j = 0; j < number1.length; j++) {
@@ -21,8 +23,9 @@ public class CompareArray {
 						listSameNumber.add(number1[i]);
 					}
 				}
-			}
-		} else if (number1.length > number2.length) {
+			}	
+		}//If array 2 has more length than array 1
+		else if (number1.length > number2.length) {
 			for (int i = 0; i < number2.length; i++) {
 				for (int j = 0; j < number1.length; j++) {
 					if (number2[i] == number1[j]) {
@@ -30,7 +33,8 @@ public class CompareArray {
 					}
 				}
 			}
-		} else {
+		}//If array 1 has more length than array 2
+		else {
 			for (int i = 0; i < number1.length; i++) {
 				for (int j = 0; j < number2.length; j++) {
 					if (number1[i] == number2[j]) {
