@@ -4,41 +4,37 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CompareArray {
-
 	public static void main(String[] args) {
-		int number1[] = { 9, 3, 7, 1, 1, 1, 1, 1, 5, 4, 6 };
-		int number2[] = { 6, 1, 1, 7, 1, 4, 6, 3, 8, 1, 1 };
+		int numberOne[] = { 9, 3, 7, 1, 2, 1, 1, 1, 5, 4, 8 };
+		int numberTwo[] = { 6, 1, 2, 7, 1, 4, 6, 3, 8, 0, 2 };
+		
 		CompareArray t = new CompareArray();
-		System.out.println(t.compareTwoArray(number1, number2));
+		System.out.println(t.compareTwoArray(numberOne, numberTwo));
 	}
 
-	public Set<Integer> compareTwoArray(int[] number1, int[] number2) {
+	public Set<Integer> compareTwoArray(int[] numberOne, int[] numberTwo) {
 		Set<Integer> listSameNumber = new HashSet<Integer>();
-		
-		//If array has same length
-		if (number1.length == number2.length) {
-			for (int i = 0; i < number1.length; i++) {
-				for (int j = 0; j < number1.length; j++) {
-					if (number1[i] == number2[j]) {
-						listSameNumber.add(number1[i]);
-					}
-				}
-			}	
-		}//If array 2 has more length than array 1
-		else if (number1.length > number2.length) {
-			for (int i = 0; i < number2.length; i++) {
-				for (int j = 0; j < number1.length; j++) {
-					if (number2[i] == number1[j]) {
-						listSameNumber.add(number1[j]);
+		if (numberOne.length == numberTwo.length) {
+			for (int i = 0; i < numberOne.length; i++) {
+				for (int j = 0; j < numberOne.length; j++) {
+					if (numberOne[i] == numberTwo[j]) {
+						listSameNumber.add(numberOne[i]);
 					}
 				}
 			}
-		}//If array 1 has more length than array 2
-		else {
-			for (int i = 0; i < number1.length; i++) {
-				for (int j = 0; j < number2.length; j++) {
-					if (number1[i] == number2[j]) {
-						listSameNumber.add(number2[j]);
+		} else if (numberOne.length > numberTwo.length) {
+			for (int i = 0; i < numberTwo.length; i++) {
+				for (int j = 0; j < numberOne.length; j++) {
+					if (numberTwo[i] == numberOne[j]) {
+						listSameNumber.add(numberOne[j]);
+					}
+				}
+			}
+		} else {
+			for (int i = 0; i < numberOne.length; i++) {
+				for (int j = 0; j < numberTwo.length; j++) {
+					if (numberOne[i] == numberTwo[j]) {
+						listSameNumber.add(numberTwo[j]);
 					}
 				}
 			}
